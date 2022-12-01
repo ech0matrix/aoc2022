@@ -1,12 +1,15 @@
 fun main() {
+    fun parseGroups(input: List<String>): List<List<String>> {
+        val splitIndex = input.indexOf("")
+        if (splitIndex == -1)
+            return listOf(input)
+        val first: List<String> = input.subList(0, splitIndex)
+        val remainder: List<List<String>> = parseGroups(input.subList(splitIndex+1, input.size))
+        return remainder.plusElement(first)
+    }
+
     fun part1(input: List<String>): Int {
-        return input.joinToString(",")
-            .replace(",,", ";")
-            .split(';')
-            .maxOf { calList ->
-                calList.split(',')
-                    .sumOf { calString -> calString.toInt() }
-            }
+        return parseGroups(input).maxOf { group -> group.sumOf { it.toInt() } }
     }
 
     fun part2(input: List<String>): Int {
