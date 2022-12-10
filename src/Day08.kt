@@ -34,11 +34,6 @@ fun main() {
     println(part2(input))
 }
 
-data class Coordinates(
-    val row: Int,
-    val col: Int
-)
-
 data class Tree(
     val position: Coordinates,
     val height: Int
