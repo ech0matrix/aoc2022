@@ -1,5 +1,3 @@
-import java.rmi.UnexpectedException
-
 fun main() {
     fun setupGrid(input: List<String>, grid: MutableMap<Coordinates, GridPosition>): Pair<Coordinates, Coordinates> {
         var start = Coordinates(-1,-1)
@@ -46,7 +44,7 @@ fun main() {
             }
         }
 
-        throw UnexpectedException("Didn't find result")
+        throw IllegalStateException("Didn't find result")
     }
 
     fun part1(input: List<String>): Int {

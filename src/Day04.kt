@@ -25,19 +25,3 @@ fun main() {
     println(part1(input))
     println(part2(input))
 }
-
-data class InclusiveRange(
-    val x: Int,
-    val y: Int
-) {
-    fun fullyContains(other: InclusiveRange): Boolean {
-        return this.x <= other.x && this.y >= other.y
-    }
-
-    fun overlaps(other: InclusiveRange): Boolean {
-        return (this.x >= other.x && this.x <= other.y)
-            || (this.y >= other.x && this.y <= other.y)
-            || (other.x >= this.x && other.x <= this.y)
-            || (other.y >= this.x && other.y <= this.y)
-    }
-}
