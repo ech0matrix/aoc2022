@@ -44,7 +44,7 @@ fun main() {
                 } else if (it > 0) {
                     val oppositeMove = it - (nodes.size-1)
                     if (abs(oppositeMove) < it) {
-                        println("$oppositeMove is faster than $it")
+                        //println("$oppositeMove is faster than $it")
                         oppositeMove
                     } else {
                         it
