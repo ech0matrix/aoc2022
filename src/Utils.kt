@@ -22,6 +22,8 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 // Day14
 // Day15
 // Day17
+// Day22
+// Day23
 data class Coordinates(
     val row: Int,
     val col: Int
